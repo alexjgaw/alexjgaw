@@ -3,6 +3,7 @@
   bottom: -2.2vh;
 }
 
-#hill object {
+#hill svg {
   height: 30vh;
+  width: auto
 }
