@@ -12,17 +12,7 @@
   font-size: 4vw;
   line-height: 1em;
   margin-top: 2vw;
-  margin-bottom: 0;
-}
-
-#message-box a {
-  color: #00c1a6;
-  font-size: 2vw;
-  text-decoration: none;
-}
-
-#message-box a:first-of-type {
-  margin-right: 2vw;
+  margin-bottom: 3.6vw;
 }
 
 #message-body {

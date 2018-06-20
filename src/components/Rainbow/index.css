@@ -37,6 +37,11 @@ path {
   z-index: 4;
 }
 
+text a {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 .cloud-path {
   pointer-events: painted;
 }
@@ -47,10 +52,16 @@ path {
 
 .rainbow-cloud.right {
   margin-left: -14vw;
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
 }
 
+.cloud-text:hover a{
+  fill: #00ffdb;
+  font-size: 17px;
+}
+
+.rainbow-cloud a {
+  fill: #00c1a6;
+}
 #curve {
   pointer-events: none;
   position: relative;
