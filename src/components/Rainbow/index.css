@@ -61,6 +61,7 @@ text a {
 
 .rainbow-cloud a {
   fill: #00c1a6;
+  transition: all .5s;
 }
 #curve {
   pointer-events: none;
@@ -72,10 +73,21 @@ text a {
   pointer-events: none;
 }
 
-/* Rainbow lines */
-#rainbow-red, #rainbow-orange, #rainbow-yellow, #rainbow-green, #rainbow-blue, #rainbow-purple {
+.rainbow-color {
   cursor: pointer;
+  transition: all .5s;
 }
+
+.rainbow-color:hover {
+  stroke: #75c9fd;
+  stroke-width: 3px;
+}
+
+.rainbow-color.on {
+  fill: #75c9fd;
+}
+
+/* Rainbow colors */
 
 #rainbow-red:hover {
   fill: #ff1919;

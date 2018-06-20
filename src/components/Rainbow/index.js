@@ -9,6 +9,14 @@ const Rainbow = (props) => {
 
   const change = (e) => {
     props.changeMessage(e);
+    // Add class to imitate focus
+    // TODO: Use refs instead of targeting by id
+    const allColors = document.getElementsByClassName('rainbow-color');
+    for(let node of allColors) {
+      node.classList.remove('on');
+    }
+    const el = document.getElementById(e.target.id);
+    el.classList.add('on');
   };
 
   ////////////////
@@ -79,6 +87,7 @@ const Rainbow = (props) => {
           d="M747.86 191.033c-239.748-.34-474.52 127.419-565.956 401.12l13.768 2.171c95.657-267.716 328.708-391.67 563.77-387.63 234.973 4.037 472.17 135.664 577.093 377.974 2.066-.437 7.852-1.444 14.108-2.518-102.228-250.045-347.847-386.535-591.364-391.004-3.807-.07-7.614-.107-11.42-.113z"
           transform="scale(.26458)"
           id="rainbow-red"
+          className="rainbow-color"
           color="#000"
           fontWeight={400}
           fontFamily="sans-serif"
@@ -111,6 +120,7 @@ const Rainbow = (props) => {
           d="M748.457 214.156c-227.812-.065-450.948 121.314-544.643 380.115l21.592-1.742C323.136 344 540.83 228.59 760.106 232.758c219.144 4.167 440.03 127.511 545.162 355.342l23.472-2.25C1224.663 347.624 990.947 218.232 759.31 214.252a641.632 641.632 0 0 0-10.852-.096z"
           transform="scale(.26458)"
           id="rainbow-orange"
+          className="rainbow-color"
           color="#000"
           fontWeight={400}
           fontFamily="sans-serif"
@@ -143,6 +153,7 @@ const Rainbow = (props) => {
           d="M749.848 240.21c-212.423-.442-420.966 112.565-516.485 352.946l17.866 2.88c99.275-229.491 303.296-336.837 508.884-333.315 205.578 3.521 412.796 117.666 519.104 329.927l18.203-3.345C1193.172 365.472 975.73 244.42 759.967 240.318h-.002c-3.373-.064-6.746-.1-10.117-.107z"
           transform="scale(.26458)"
           id="rainbow-yellow"
+          className="rainbow-color"
           color="#000"
           fontWeight={400}
           fontFamily="sans-serif"
@@ -175,6 +186,7 @@ const Rainbow = (props) => {
           d="M750.5 270.197c-199.035-.076-394.533 104.975-491.426 326.895l17.924 2.148c99.978-209.949 290.41-309.138 482.488-306.6 192.131 2.54 385.947 106.653 493.08 302.133l18.522-1.277c-105.416-208.05-309.074-319.754-511.106-323.215h-.002c-3.16-.054-6.32-.083-9.48-.084z"
           transform="scale(.26458)"
           id="rainbow-green"
+          className="rainbow-color"
           color="#000"
           fontWeight={400}
           fontFamily="sans-serif"
@@ -207,6 +219,7 @@ const Rainbow = (props) => {
           d="M750.541 300.154c-185.794.6-368.288 97.575-465.756 300.451l17.77 3.684c99.056-191.36 275.539-282.977 453.853-281.773 178.456 1.204 358.725 95.198 465.502 273.882l22.176-1.144C1137.9 404.234 947.803 302.689 759.39 300.199c-2.95-.039-5.9-.054-8.85-.045z"
           transform="scale(.26458)"
           id="rainbow-blue"
+          className="rainbow-color"
           color="#000"
           fontWeight={400}
           fontFamily="sans-serif"
@@ -239,6 +252,7 @@ const Rainbow = (props) => {
           d="M756.355 330.074c-175.304-1.183-348.452 88.334-446.396 276.451l17.287 6.327c96.22-178.077 260.176-264.44 426.156-264.463 166.174-.023 334.291 86.33 438.774 252.386l21.445-3.336C1107.96 422.858 931.23 331.254 756.357 330.074z"
           transform="scale(.26458)"
           id="rainbow-purple"
+          className="rainbow-color"
           color="#000"
           fontWeight={400}
           fontFamily="sans-serif"
