@@ -1,0 +1,17 @@
+.no-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../../images/rainbow-bg.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 140vw;
+  back
+  width: 100%;
+  height: 100%;
+}
+
+.no-mobile h1, .no-mobile h2 {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}

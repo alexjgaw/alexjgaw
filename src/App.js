@@ -5,6 +5,7 @@ import Hill from './components/Hill';
 import Cloud from './components/Cloud';
 import Rainbow from './components/Rainbow';
 import Greeting from './components/Greeting';
+import NoMobile from './components/NoMobile';
 
 class App extends Component {
   constructor(props) {
@@ -13,9 +14,16 @@ class App extends Component {
       messageTitle: 'About Me',
       message: "I'm a web developer who's interested in humanity in tech. I love to use my brain to solve problems, but I strongly believe that the first step has to be using my heart to figure out what problems to solve. I also think the world is generally a pretty silly place.",
       gitHubUrl: '',
-      liveUrl: ''
+      liveUrl: '',
+      width: 0
     };
     this.handleChangeMessage = this.handleChangeMessage.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
   }
 
   handleChangeMessage(e) {
@@ -73,8 +81,17 @@ class App extends Component {
     });
   }
 
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth});
+  }
+
   render() {
-    return (
+    const mobileScreen =
+      <main className="App">
+        <NoMobile />;
+      </main>
+
+    const normal =
       <main className="App">
         <Cloud />
         <Greeting/>
@@ -86,8 +103,13 @@ class App extends Component {
           liveUrl={this.state.liveUrl}
         />
         <Hill />
-      </main>
-    );
+      </main>;
+
+    if (this.state.width > 768) {
+      return (normal);
+    } else {
+      return (mobileScreen);
+    }
   }
 }
 
